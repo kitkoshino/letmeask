@@ -1,0 +1,66 @@
+@import './variables.scss';
+
+.question {
+  background: $lighter-grey;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+
+  // sempre que uma .question vir seguida de outra .question, a primeira nao recebe a estilização
+  & + .question {
+    margin-top: 8px;
+  }
+
+  p {
+    color: $dark-grey;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      span {
+        margin-left: 8px;
+        color: $dark-grey;
+        font-size: 14px;
+      }
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: $dark-grey;
+        gap: 8px;
+
+        &.liked {
+          color: $main-color;
+
+          svg path {
+            stroke: $main-color;
+          }
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.5);
+      }
+    }
+  }
+}
