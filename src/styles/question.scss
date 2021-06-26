@@ -11,6 +11,20 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: $disabled-color;
+    border: 1px solid $main-color;
+
+    footer .user-info span {
+      color: $darker-grey;
+    }
+  }
+
+  &.answered {
+    background: $light-grey;
+
+  }
+
   p {
     color: $dark-grey;
   }
@@ -35,6 +49,11 @@
         color: $dark-grey;
         font-size: 14px;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
     }
 
     button {
